@@ -114,14 +114,14 @@ export const colors = {
     950: '#450a0a',
   },
   
-  // Signup section - lighter red for form backgrounds
+  // Signup section - soft red tone
   signup: {
-    background: '#f27474',
-    backgroundHover: '#e85d5d',
+    background: '#e85c5c',
+    backgroundHover: '#d94f4f',
     text: '#ffffff',
     placeholder: '#b82828',
-    button: '#b82828',
-    buttonHover: '#9b2424',
+    button: '#ffffff',
+    buttonHover: '#f0f0f0',
   },
 
   // Base colors

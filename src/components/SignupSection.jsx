@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { TextAnimate } from '@/components/ui/text-animate'
 import AnimateIn from './ui/AnimateIn'
 import { colors } from '@/config/colors'
 import candidatePhoto from '../assets/t4.png'
@@ -31,27 +30,13 @@ function SignupSection() {
           style={{ backgroundColor: colors.signup.background }}
         >
           <div className="max-w-md mx-auto w-full lg:ml-auto lg:mr-16">
-            <AnimateIn delay={0.1}>
-              <p
-                className="text-sm font-bold tracking-[0.25em] uppercase mb-3"
-                style={{ color: colors.signup.text, opacity: 0.85 }}
-              >
-                Sign Up To
-              </p>
-            </AnimateIn>
-
             <AnimateIn delay={0.2}>
-              <TextAnimate
-                as="h2"
-                animation="fadeIn"
-                by="word"
-                delay={0.1}
-                once
+              <h2
                 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 leading-tight tracking-tight"
                 style={{ color: colors.signup.text }}
               >
-                Receive Updates
-              </TextAnimate>
+                Sign Up To Receive Updates
+              </h2>
             </AnimateIn>
 
             <AnimateIn delay={0.3}>
@@ -115,11 +100,16 @@ function SignupSection() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="px-8 py-3 font-bold text-sm tracking-[0.15em] uppercase transition-all duration-200 hover:opacity-90"
+                    className="w-full px-5 py-4 font-bold text-sm tracking-[0.15em] uppercase rounded-md transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.02]"
                     style={{
-                      backgroundColor: 'transparent',
-                      color: colors.signup.text,
-                      borderBottom: `3px solid ${colors.signup.text}`,
+                      backgroundColor: '#ffffff',
+                      color: '#d63031',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#f0f0f0'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#ffffff'
                     }}
                   >
                     Submit
