@@ -325,20 +325,23 @@ const TextAnimateBase = ({
         aria-label={accessible ? children : undefined}
         {...props}>
         {accessible && <span className="sr-only">{children}</span>}
-        {segments.map((segment, i) => (
-          <motion.span
-            key={`${by}-${segment}-${i}`}
-            variants={finalVariants.item}
-            custom={i * staggerTimings[by]}
-            className={cn(
-              by === "line" ? "block" : "inline-block whitespace-pre",
-              by === "character" && "",
-              segmentClassName
-            )}
-            aria-hidden={accessible ? true : undefined}>
-            {segment}
-          </motion.span>
-        ))}
+        {segments.map((segment, i) => {
+          const isWhitespace = by === "word" && /^\s+$/.test(segment)
+          return (
+            <motion.span
+              key={`${by}-${segment}-${i}`}
+              variants={isWhitespace ? undefined : finalVariants.item}
+              custom={i * staggerTimings[by]}
+              className={cn(
+                by === "line" ? "block" : isWhitespace ? "inline" : "inline-block whitespace-pre",
+                by === "character" && "",
+                segmentClassName
+              )}
+              aria-hidden={accessible ? true : undefined}>
+              {segment}
+            </motion.span>
+          )
+        })}
       </MotionComponent>
     </AnimatePresence>
   );
