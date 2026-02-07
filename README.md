@@ -1,114 +1,54 @@
-# Template1 - React + Vite + Tailwind CSS
+# Maria 2024 — Campaign Website Template
 
-A clean, fast-loading React template optimized for political candidate websites. Built with Vite for lightning-fast development and production builds, and styled with Tailwind CSS for a modern, customizable design.
+A modern, responsive campaign website template built with React, Vite, and Tailwind CSS. Created by [Win Advocacy](https://winadvocacy.com) — we build political websites that win.
 
-## Features
+## Quick Start
 
-- ⚡ **Vite** - Fast build tool and dev server
-- ⚛️ **React** - Modern React with HMR
-- 🎨 **Tailwind CSS** - Utility-first CSS framework
-- 🎨 **Customizable Colors** - Centralized color configuration
-- 🚀 **Optimized for Performance** - Fast loading times
-- 📦 **Production Ready** - Optimized build configuration
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher recommended)
-- npm or yarn
-
-### Installation
-
-1. Install dependencies:
 ```bash
 npm install
+npm run dev      # Start dev server
+npm run build    # Production build
 ```
 
-2. Start the development server:
-```bash
-npm run dev
-```
+## Customization
 
-3. Open your browser and navigate to `http://localhost:5173`
+This template is designed to be easily re-skinned for any candidate.
 
-### Building for Production
+### 1. Candidate Data (`src/config/siteData.js`)
 
-```bash
-npm run build
-```
+All candidate-specific content — name, slogans, bio, plan details, contact info — lives in one file. Update it to swap in a new candidate.
 
-The optimized production build will be in the `dist` directory.
+### 2. Images (`src/assets/`)
 
-### Preview Production Build
+Replace these images with your candidate's assets:
 
-```bash
-npm run preview
-```
+| File | Purpose |
+|------|---------|
+| `hero-bg.png` | Hero section background |
+| `logo-white.png` | Logo (transparent navbar) |
+| `logo-color.png` | Logo (white navbar) |
+| `candidate-portrait.png` | Main candidate photo |
+| `candidate-secondary.png` | Secondary candidate photo |
+| `video-thumbnail.png` | Video section thumbnail |
+| `about-intro.png` | About page intro image |
+| `about-track-record.png` | Track record section image |
+| `plan-cta.png` | Plan page call-to-action image |
 
-## Customizing Colors
+### 3. Colors (`src/config/colors.js`)
 
-The color palette is centralized in `src/config/colors.js`. This file contains:
+Update the color palette to match the campaign's brand. Colors are automatically available as Tailwind classes (e.g., `bg-primary-600`).
 
-- **Primary colors** - Main brand colors (default: blue)
-- **Secondary colors** - Complementary colors (default: slate)
-- **Accent colors** - Highlights and CTAs (default: red)
-- **Neutral colors** - Grays for text and backgrounds
-- **Semantic colors** - Success, warning, and error states
+### 4. Meta / SEO (`index.html`)
 
-### How to Change Colors
+Update the `<title>`, Open Graph tags, and favicon files in `src/assets/favicon/`.
 
-1. Open `src/config/colors.js`
-2. Modify the color values in the `colors` object
-3. Colors are automatically available in Tailwind classes (e.g., `bg-primary-500`, `text-secondary-700`)
+## Tech Stack
 
-### Example Usage
+- **React 19** + React Router
+- **Vite** for fast builds
+- **Tailwind CSS** for styling
+- **Motion** for animations
 
-```jsx
-// Using custom colors in components
-<div className="bg-primary-500 text-white">
-  Primary colored background
-</div>
+---
 
-<button className="bg-accent-600 hover:bg-accent-700">
-  Accent colored button
-</button>
-```
-
-## Project Structure
-
-```
-template1/
-├── src/
-│   ├── components/     # React components
-│   ├── config/        # Configuration files
-│   │   └── colors.js  # Color palette configuration
-│   ├── App.jsx        # Main app component
-│   ├── App.css        # App-specific styles
-│   ├── index.css      # Global styles with Tailwind directives
-│   └── main.jsx       # Entry point
-├── public/            # Static assets
-├── index.html         # HTML template
-├── vite.config.js     # Vite configuration
-├── tailwind.config.js # Tailwind CSS configuration
-└── postcss.config.js  # PostCSS configuration
-```
-
-## Performance Optimizations
-
-- **Vite** - Fast HMR and optimized builds
-- **Tailwind JIT** - Only generates CSS for classes you use
-- **Code Splitting** - Automatic vendor chunk splitting
-- **Minification** - Production builds are minified
-- **CSS Minification** - Styles are optimized for production
-
-## Development
-
-- The dev server runs on `http://localhost:5173`
-- Hot Module Replacement (HMR) is enabled
-- Changes to `colors.js` require a dev server restart to take effect in Tailwind
-
-## License
-
-This template is free to use for your projects.
-# WIN-template2
+Built with care by [Win Advocacy](https://winadvocacy.com)

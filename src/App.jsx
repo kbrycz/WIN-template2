@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import HeroSection from './components/HeroSection'
 import QuoteSection from './components/QuoteSection'
@@ -9,9 +8,10 @@ import Footer from './components/Footer'
 import PopupModal from './components/PopupModal'
 import AboutPage from './components/AboutPage'
 import ContactPage from './components/ContactPage'
-import MariasPlan from './components/MariasPlan'
+import PlanPage from './components/PlanPage'
 import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar'
+import siteData from './config/siteData'
 
 function HomePage() {
   return (
@@ -37,7 +37,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/marias-plan" element={<MariasPlan />} />
+        <Route path="/plan" element={<PlanPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </div>

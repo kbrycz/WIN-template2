@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import AnimateIn from './ui/AnimateIn'
 import { colors } from '@/config/colors'
-import candidatePhoto from '../assets/t4.png'
+import candidatePhoto from '../assets/candidate-secondary.png'
 
 function SignupSection() {
   const [formData, setFormData] = useState({
@@ -17,14 +17,12 @@ function SignupSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Handle form submission
     setFormData({ firstName: '', email: '', zipCode: '' })
   }
 
   return (
     <section className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-        {/* Left - Sign Up Form */}
         <div
           className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 md:py-20"
           style={{ backgroundColor: colors.signup.background }}
@@ -47,70 +45,16 @@ function SignupSection() {
                     color: ${colors.signup.placeholder};
                   }
                 `}</style>
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  placeholder="First Name"
-                  className="signup-input w-full px-5 py-4 rounded-md bg-white border-2 text-neutral-900 focus:outline-none transition-all shadow-sm text-lg font-semibold"
-                  style={{ borderColor: '#ffffff' }}
-                  onFocus={(e) => {
-                    e.target.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.3)'
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.boxShadow = 'none'
-                  }}
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Email*"
-                  className="signup-input w-full px-5 py-4 rounded-md bg-white border-2 text-neutral-900 focus:outline-none transition-all shadow-sm text-lg font-semibold"
-                  style={{ borderColor: '#ffffff' }}
-                  onFocus={(e) => {
-                    e.target.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.3)'
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.boxShadow = 'none'
-                  }}
-                  required
-                />
-                <input
-                  type="text"
-                  name="zipCode"
-                  value={formData.zipCode}
-                  onChange={handleChange}
-                  placeholder="ZIP Code*"
-                  pattern="[0-9]{5}"
-                  maxLength="5"
-                  className="signup-input w-full px-5 py-4 rounded-md bg-white border-2 text-neutral-900 focus:outline-none transition-all shadow-sm text-lg font-semibold"
-                  style={{ borderColor: '#ffffff' }}
-                  onFocus={(e) => {
-                    e.target.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.3)'
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.boxShadow = 'none'
-                  }}
-                  required
-                />
+                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First Name" className="signup-input w-full px-5 py-4 rounded-md bg-white border-2 text-neutral-900 focus:outline-none transition-all shadow-sm text-lg font-semibold" style={{ borderColor: colors.white }} onFocus={(e) => { e.target.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.3)' }} onBlur={(e) => { e.target.style.boxShadow = 'none' }} required />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email*" className="signup-input w-full px-5 py-4 rounded-md bg-white border-2 text-neutral-900 focus:outline-none transition-all shadow-sm text-lg font-semibold" style={{ borderColor: colors.white }} onFocus={(e) => { e.target.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.3)' }} onBlur={(e) => { e.target.style.boxShadow = 'none' }} required />
+                <input type="text" name="zipCode" value={formData.zipCode} onChange={handleChange} placeholder="ZIP Code*" pattern="[0-9]{5}" maxLength="5" className="signup-input w-full px-5 py-4 rounded-md bg-white border-2 text-neutral-900 focus:outline-none transition-all shadow-sm text-lg font-semibold" style={{ borderColor: colors.white }} onFocus={(e) => { e.target.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.3)' }} onBlur={(e) => { e.target.style.boxShadow = 'none' }} required />
                 <div className="pt-2">
                   <button
                     type="submit"
                     className="w-full px-5 py-4 font-bold text-sm tracking-[0.15em] uppercase rounded-md transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.02]"
-                    style={{
-                      backgroundColor: '#ffffff',
-                      color: '#d63031',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#f0f0f0'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#ffffff'
-                    }}
+                    style={{ backgroundColor: colors.white, color: colors.primary[600] }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = colors.signup.buttonHover }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = colors.white }}
                   >
                     Submit
                   </button>
@@ -120,15 +64,8 @@ function SignupSection() {
           </div>
         </div>
 
-        {/* Right - Candidate Photo */}
-        <div
-          className="relative min-h-[350px] lg:min-h-full overflow-hidden"
-        >
-          <img
-            src={candidatePhoto}
-            alt="Candidate"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+        <div className="relative min-h-[350px] lg:min-h-full overflow-hidden">
+          <img src={candidatePhoto} alt="Candidate" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </div>
     </section>
