@@ -16,7 +16,7 @@ function QuoteSection() {
 
           {/* Quote */}
           <AnimateIn animation="fadeIn" delay={0.25}>
-            <blockquote className="text-neutral-600 text-xl sm:text-2xl lg:text-3xl leading-loose lg:leading-relaxed mb-10 lg:mb-14 max-w-6xl mx-auto">
+            <blockquote className="text-neutral-600 text-xl sm:text-2xl lg:text-3xl leading-loose lg:leading-relaxed mb-10 lg:mb-14 max-w-6xl mx-auto text-left sm:text-center">
               &ldquo;I&rsquo;m running for Governor because I understand the everyday challenges families face &mdash; and I&rsquo;ve dedicated my career to making sure{' '}
               <strong className="text-neutral-800 font-bold underline underline-offset-2">
                 every voice is heard
