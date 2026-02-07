@@ -7,7 +7,7 @@ import { colors } from '@/config/colors'
  * Shows on first visit with donation amount buttons.
  * Set ALWAYS_SHOW_POPUP to true to always show (ignores localStorage).
  */
-const ALWAYS_SHOW_POPUP = true
+const ALWAYS_SHOW_POPUP = false
 
 function PopupModal() {
   const [isOpen, setIsOpen] = useState(false)
